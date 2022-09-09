@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>Velha</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        background-color: black;
+        background-image: linear-gradient(to bottom right, rgb(30, 0, 0), rgb(40, 40, 70));
+    }
+    .display
+    {
+        top: 25%;
+        background-color: white;
+        background-image: linear-gradient(to bottom right, rgb(128, 0, 128), rgb(255, 0, 255));
+        align-items: center;
+        display: flex;
+    }
+    .game-table {
+        display: grid;
+        background-color: rgb(100, 100, 100);
+        width: 95%;
+        height: 95%;
+        margin: auto;
+    }
+    .game-table div {
+        margin: 1%;
+        background-color: white;
+        cursor: cell;
+    }
+    .game-table div img
+    {
+        width: 100%;
+        height: 100%
+    }
+    .game-table div:hover {
+        background-color: rgba(0,0,0,0.1);
+    }
+</style>
+
+<body>
+    <div id="display" class="display">
+        <div class="game-table" id="game-table">
+            <div onclick="listen(0)"><img></img></div>
+            <div onclick="listen(1)"><img></img></div>
+            <div onclick="listen(2)"><img></img></div>
+            <div onclick="listen(3)"><img></img></div>
+            <div onclick="listen(4)"><img></img></div>
+            <div onclick="listen(5)"><img></img></div>
+            <div onclick="listen(6)"><img></img></div>
+            <div onclick="listen(7)"><img></img></div>
+            <div onclick="listen(8)"><img></img></div>
+        </div>
+    </div>
+    <div style="background-image:linear-gradient(to right, rgb(10,10,10), rgb(50, 50, 50));padding: 10;">
+        <p id="narrator" style="margin:20px;font-family:Helvetica,'Lucida Sans',Arial,sans-serif;font-size:60px;font-weight: bolder;color:white;"></p>
+        <form>
+            <button type="submit" id="replay-btn" style="cursor:pointer;display:none;margin:auto;width:100%;background-color:black;border: 0;padding:5px;color:white;font-family:Helvetica,sans-serif;font-size:20px;">Recome&ccedil;ar?</button>
+        </form>
+    </div>
+    <div style="background-color: white;background-image:linear-gradient(to top right, rgb(100, 0, 0), rgb(0, 0, 100));">
+        <p style="margin:3px;font-family:sans-serif;font-size:40px;font-weight: bolder;color:black;">
+        <span style="color: rgb(255, 100, 100);" id="x_victories"></span> | <span style="color: rgb(100, 100, 255);" id="o_victories"></span>
+        </p>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
